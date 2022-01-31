@@ -50,6 +50,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # shoulda matchers makes it easier to write tests by writing descriptive tests. Read more: https://github.com/thoughtbot/shoulda
+  gem 'shoulda', '~> 4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
