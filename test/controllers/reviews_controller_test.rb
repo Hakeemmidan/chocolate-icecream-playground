@@ -1,6 +1,13 @@
 require "test_helper"
 
 class ReviewsControllerTest < ActionController::TestCase
+  context "GET new" do
+    should "respond with 200 " do
+      get :new
+      assert_response 200
+    end
+  end
+
   context "POST create" do
     should "Restrict parameters on :review to product_id, rating, and body" do
       params = {

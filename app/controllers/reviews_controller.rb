@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def new
+    # just renders the new review template
+  end
+
   def create
     if review_params[:rating].nil?
       render json: { errors: ["Rating can't be blank"] }, status: 422
