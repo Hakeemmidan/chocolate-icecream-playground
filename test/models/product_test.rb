@@ -17,7 +17,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "It gets saved properly when it has a title" do
-    assert_equal "A Portfolio of Small Bets - The Course", products(:with_title).title
+    assert_equal "The Lorem Ipsum Course", products(:with_title).title
   end
 
   test "It marks products with no title as invalid" do
