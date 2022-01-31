@@ -10,3 +10,9 @@
 ## Associations
 - A product has many reviews
 - A review belongs to a product
+
+
+## Things to do
+- Nest API routes under versioned API (for backwards compatability)
+- Write unit, integration, and frontend tests
+
