@@ -1,3 +1,34 @@
-<h1>
-  New Review Form
-</h1>
+<div class="page-container">
+  <h1>
+    What's your rating?
+  </h1>
+
+  <%= form_with url: product_reviews_path(@product), method: :post do |form| %>
+    <label for="review[rating]" class="u-font-size-1pt3rem">
+      Rating
+    </label>
+
+    <div class="u-margin-y-1pt5rem">
+      <span class="u-font-size-1pt3rem u-hidden-text">
+        _
+      </span>
+      <%= render 'layouts/stars_interactive' %>
+    </div>
+
+    <label for="review[body]" class="u-margin-y-1pt5rem u-font-size-1pt3rem" id="review-new__review-text">
+      Review
+    </label>
+
+    <div class="u-margin-y-1pt5rem">
+      <input name="review[body]" class="review-new__body-input" type="text" placeholder="Start typing...." />
+    </div>
+
+    <div class="u-margin-y-1pt5rem">
+      <input class="review-new__submit-btn" type="submit" value="Submit review">
+    </div>
+  <% end %>
+
+</div>
+
+<script>
+</script>

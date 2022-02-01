@@ -1,5 +1,4 @@
-
-<div class="product-show__container">
+<div class="page-container">
   <h1 class="product-show__title">
     <%= @product.title %>
   </h1>
@@ -10,10 +9,10 @@
         <%= @reviews_rating_avg %>
       </div>
       <div class="product-show__rating-avg-stars">
-        <%= render 'stars', num_filled: @reviews_rating_avg %>
+        <%= render 'layouts/stars', num_filled: @reviews_rating_avg %>
       </div>
     </div>
-    <a href="/reviews/new" class="product-show__right product-show__write-review-btn">
+    <a href="/products/<%= @product.id %>/reviews/new" class="product-show__right product-show__write-review-btn">
       Add review
     </a>
   </div>
@@ -26,7 +25,7 @@
       <% @product.reviews.each do |review| %>
         <div class="product-show__review">
           <div class="product-show__review-stars-rating">
-            <%= render 'stars', num_filled: review.rating %>
+            <%= render 'layouts/stars', num_filled: review.rating %>
           </div>
           <div class="product-show__review-rating">
             <span class="u-bold-weight-black-color">

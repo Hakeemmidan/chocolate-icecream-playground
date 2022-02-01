@@ -5,8 +5,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
-    @reviews_rating_avg = @product.reviews.average(:rating)
+
     if @product
+      @reviews_rating_avg = @product.reviews.average(:rating).round(2)
       render :show
     else
       render json: { errors: ["Product not found"] }, status: 404

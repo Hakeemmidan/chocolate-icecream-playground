@@ -17,3 +17,45 @@
 html {
   font-family: sans-serif;
 }
+
+/* Utilities START */
+.u-margin-y-1pt5rem {
+  margin: 1.5rem 0;
+}
+
+.u-font-size-1pt3rem {
+  font-size: 1.3rem;
+}
+
+.u-bold-weight-black-color {
+  font-weight: bold;
+  color: black;
+}
+
+.u-hidden-text {
+  color: transparent;
+  cursor: default;
+}
+/* Utilities END */
+
+
+.page-container {
+  max-width: 60rem;
+  margin: 10% auto 5% auto;
+  padding: 0 2rem;
+}
+
+
+@media only screen and (max-width: 470px) {
+  html {
+    /* Changes everything that uses rem as its unit */
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  html {
+    /* Changes everything that uses rem as its unit */
+    font-size: 8px;
+  }
+}

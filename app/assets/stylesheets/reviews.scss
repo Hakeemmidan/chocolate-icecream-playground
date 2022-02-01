@@ -2,89 +2,70 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-//Stars START
-// Source: https://codepen.io/FredGenkin/pen/eaXYGV
-:root {
-  --star-size: 2rem;
-  --star-color: lightgray;
-  --star-background: #fc0;
+// _stars_interactive START
+// Source: https://codepen.io/jamesbarnett/pen/najzYK
+
+fieldset, label { margin: 0; padding: 0; }
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
 }
 
-.rating-stars {
-  --percent: calc(var(--rating) / 5 * 100%);
-  
-  display: inline-block;
-  font-size: var(--star-size);
-  font-family: system-ui;
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 2rem;
   line-height: 1;
-  
-  &::before {
-    content: '★★★★★';
-    letter-spacing: 3px;
-    background: linear-gradient(90deg, var(--star-background) var(--percent), var(--star-color) var(--percent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: system-ui;
+  display: inline-block;
+  content: "★";
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > label { cursor: pointer; }
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+// _stars_interactive END
+
+.review-new__body-input {
+  border: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  &:focus {
+    outline: none;
   }
 }
-// Stars END
 
-.product-show__container {
-  max-width: 60rem;
-  margin: 10% auto 5% auto;
-  padding: 0 2rem;
-}
-
-.product-show__upper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.product-show__left {
-  display: flex;
-  align-items: baseline;
-}
-
-.product-show__rating-avg {
-  font-size: 2rem;
-  margin-right: 1rem;
-}
-
-.product-show__write-review-btn {
-  padding: 0.7rem 1.5rem;
-  border: 0.1rem solid gray;
-  color: gray;
+.review-new__submit-btn {
+  border: 1;
+  padding: 0.7rem 1.7rem;
   border-radius: 0.3rem;
+  color: gray;
+  background-color: white;
+  border: 0.1rem solid gray;
   cursor: pointer;
-  text-decoration: none;
   &:hover {
     background: whitesmoke;
   }
 }
 
-.product-show__hr {
-  background-color: lightgray;
-  height: 0.1rem;
-  border: 0;
-  margin: 3rem 0;
+#review-new__review-text {
+  margin-top: 3rem;
+  display: inline-block;
 }
-
-.product-show__review {
-  display: flex;
-  align-items: flex-end;
-  color: gray;
-
-  & > * {
-    margin: 0 1rem 1rem 0;
-  }
-
-  & div:nth-of-type(2) { // second child has less margin right than rest 
-    margin-right: 0.5rem;
-  }
-}
-
-.u-bold-weight-black-color {
-  font-weight: bold;
-  color: black;
-}
-
