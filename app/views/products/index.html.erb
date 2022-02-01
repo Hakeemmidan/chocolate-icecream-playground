@@ -1,1 +1,13 @@
-<%= @products %>
+
+<div class="products-container">
+  <h1>Products: </h1>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <a href="/products/<%=product.id%>" >
+          <%= product.title %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
