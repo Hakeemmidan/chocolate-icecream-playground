@@ -7,10 +7,14 @@ Just a demo app for testing some things
 3. `rails db:migrate`
 4. `rails db:seed`
 
+## Test
+```
+rails test
+```
+
 ## Start
 1. `rails s`
 2. Visit http://localhost:3000
-
 
 ## Features
 - Mobile-responsiveness
@@ -34,6 +38,14 @@ __Mobile:__
 - A product has many reviews
 - A review belongs to a product
 
+## Architectural decisions
+Nothing major. But here are some:
+- Used Rails for the backend
+  - To match the company's stack
+  - And also since I'm most familiar with Rails
+- Chose to use Rails' Minitests instead of RSpec
+  - Minitests seemed sufficent for the level of complexity that I wanted to test,
+    so I went with using it
 
 ## Things to possibly do
 - Nest API routes under versioned API (for backwards compatability)
