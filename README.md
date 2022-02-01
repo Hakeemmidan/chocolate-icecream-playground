@@ -49,5 +49,6 @@ Nothing major. But here are some:
 
 ## Things to possibly do
 - Nest API routes under versioned API (for backwards compatability)
+- Make API OpenAPI 3 compliant, and have some UI (using something like [the rswag gem](https://github.com/rswag/rswag) or [readme.io](https://readme.io/))
+  - This would make it easier for frontend developers to interact with the backend, and know the available endpoints, and example objects that each endpoint might return
 - Write more tests (unit, integration, and frontend)
-
