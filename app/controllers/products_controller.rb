@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find_by(id: params[:id])
-
+    @reviews_rating_avg = @product.reviews.average(:rating)
     if @product
       render :show
     else

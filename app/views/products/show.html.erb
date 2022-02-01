@@ -1,1 +1,43 @@
-<%= @product %>
+
+<div class="product-show__container">
+  <h1 class="product-show__title">
+    <%= @product.title %>
+  </h1>
+
+  <div class="product-show__upper">
+    <div class="product-show__left">
+      <div class="product-show__rating-avg">
+        <%= @reviews_rating_avg %>
+      </div>
+      <div class="product-show__rating-avg-stars">
+        <%= render 'stars', num_filled: @reviews_rating_avg %>
+      </div>
+    </div>
+    <a href="/reviews/new" class="product-show__right product-show__write-review-btn">
+      Add review
+    </a>
+  </div>
+
+  <hr class="product-show__hr">
+
+  <div class="product-show__lower">
+    <h2>Reviews</h2>
+    <div class="product-show__reviews">
+      <% @product.reviews.each do |review| %>
+        <div class="product-show__review">
+          <div class="product-show__review-stars-rating">
+            <%= render 'stars', num_filled: review.rating %>
+          </div>
+          <div class="product-show__review-rating">
+            <span class="u-bold-weight-black-color">
+              <%= review.rating %>
+            </span>,
+          </div>
+          <div class="product-show__review-body">
+            <%= review.body %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+
+</div>
